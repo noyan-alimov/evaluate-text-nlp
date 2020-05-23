@@ -1,3 +1,6 @@
+$primary-color: #f1f8e9;
+$font-color: #558b2f;
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +8,8 @@
 
 body {
   font-size: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: $primary-color;
 }
 
 .container {
@@ -14,9 +19,58 @@ body {
   flex-direction: column;
   height: 100%;
   width: 100%;
-}
+  padding: 3rem;
+  color: $font-color;
 
-.form-input {
-  display: flex;
-  flex-direction: column;
+  .title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    font-size: 2rem;
+  }
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0;
+    font-size: 1.2rem;
+
+    .text-input {
+      padding: 0.3rem;
+      font-size: 1.2rem;
+    }
+
+    .mode-input {
+      margin: 1rem 0;
+
+      .tweet {
+        margin-bottom: 1.3rem;
+      }
+
+      .document {
+        margin-bottom: 1.3rem;
+      }
+    }
+
+    .button {
+      width: 10%;
+      height: 2rem;
+      border-radius: 1rem;
+      background-color: $font-color;
+      color: $primary-color;
+      font-weight: bold;
+      box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+      border: 1px solid $font-color;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .response-output {
+    font-size: 1.3rem;
+  }
 }
