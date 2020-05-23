@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Evaluate Text</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="title">This app evaluates the text that you put in</h3>
+      <div class="input">
+        <h4 class="description">
+          Please put a text and indicate it is a tweet(short text) or
+          document(long text)
+        </h4>
+        <form class="form-input">
+          <label for="text">Enter text here:</label>
+          <textarea id="text" rows="4" cols="50"> </textarea>
+          <input type="radio" id="tweet" name="mode" value="tweet" />
+          <label for="tweet">Tweet</label><br />
+          <input type="radio" id="document" name="mode" value="document" />
+          <label for="document">Document</label><br />
+          <button>SUBMIT</button>
+        </form>
+      </div>
+      <div class="output">
+        <h4 class="description">Output:</h4>
+        <div></div>
+      </div>
+    </div>
+  </body>
+  <script src="js/scripts.js"></script>
+</html>
