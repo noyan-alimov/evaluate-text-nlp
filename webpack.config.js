@@ -1,13 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  entry: './src/client/index.js',
   module: {
     rules: [
       {
-        test: '/.js$/',
+        test: /.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
@@ -18,7 +19,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/client/views/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './src/client/views/index.html',
+      filename: './index.html'
+    }),
     new CleanWebpackPlugin({
       // Simulate the removal of files
       dry: true,
