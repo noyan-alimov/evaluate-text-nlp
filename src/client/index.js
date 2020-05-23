@@ -1,2 +1,2 @@
-import { test } from './js/scripts';
+import { evaluateText } from './js/scripts';
 import './styles/styles.scss';

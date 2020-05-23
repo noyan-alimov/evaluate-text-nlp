@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
-  res.sendFile('dist/index.html');
+  res.sendFile('../../dist/index.html');
 });
 
 const textapi = new aylien({
@@ -18,11 +18,10 @@ const textapi = new aylien({
 });
 
 // Aylien api request to evaluate text
-app.get('/evaluate', async (req, res) => {
+app.post('/evaluate', async (req, res) => {
   try {
     const data = await textapi.sentiment({
-      text: req.body.text,
-      mode: req.body.mode
+      text: req.body.text
     });
     res.status(200).json({ success: true, data });
   } catch (err) {
