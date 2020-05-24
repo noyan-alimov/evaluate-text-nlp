@@ -10,7 +10,10 @@
       <h3 class="title">This app evaluates articles</h3>
       <div class="input">
         <form class="form-input">
-          <label for="text">Please enter URL here:</label>
+          <label for="text"
+            >Please enter a URL here and make sure that there is no space before
+            URL:</label
+          >
           <textarea class="text-input" id="text" rows="4" cols="50"> </textarea>
           <input type="submit" class="button" value="SUBMIT" />
         </form>
@@ -20,5 +23,14 @@
         <div class="response-output"></div>
       </div>
     </div>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
   </body>
 </html>
