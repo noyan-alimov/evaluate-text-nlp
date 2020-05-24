@@ -24,7 +24,7 @@ app.post('/evaluate', (req, res) => {
   try {
     textapi.sentiment(
       {
-        text: req.body.text
+        url: req.body.url
       },
       function (error, response) {
         if (error === null) {

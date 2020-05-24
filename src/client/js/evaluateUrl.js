@@ -1,10 +1,18 @@
-export const evaluateText = () => {
-  const text = document.querySelector('#text').value;
+import { checkInput } from './checkInput';
+
+export const evaluateUrl = () => {
+  const url = document.querySelector('#text').value;
+  const isUrl = checkInput(url);
+
+  if (!isUrl) {
+    alert('Please enter a valid url');
+    console.log('Not valid url has been entered');
+  }
 
   return fetch('http://localhost:8081/evaluate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ text })
+    body: JSON.stringify({ url })
   })
     .then(res => res.json())
     .then(data => {
