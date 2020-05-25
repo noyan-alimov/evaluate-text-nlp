@@ -2,7 +2,6 @@ const urlRegex = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9
 
 export const checkInput = url => {
   const res = url.match(urlRegex);
-  console.log(res);
   if (res !== null) {
     return true;
   } else {
